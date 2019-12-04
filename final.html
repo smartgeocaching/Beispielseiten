@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<script type="text/javascript">  
+ alert("Nun das Final!");  
+</script>
+
+<title>SmartGeocache</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/webpages/styles.css" />
+</head>
+<body>
+
+<div class="header">
+  <h1>SmartGeocache WiFi WebServer - Version 3.0</h1>
+  <p>Willkommen. Diese Homepage kannst du als Owner selbst umgestalten!</p>
+</div>
+
+<div class="topnav">
+  <a href="/adminlogin">Admin Area</a>
+  <a href="/webpages/laserstation1.html">Beispiel Laser Station</a>
+  <a href="/webpages/station4.html">Beispiel R&auml;tsel Station</a>
+</div>
+
+<div class="row">
+  <div class="column">
+    <h2>Verriegelung</h2>	
+      <p>Geschafft! Nun kannst du dich im Logbuch eintragen und die Verriegelung zum Cache &uuml;ber WiFi &ouml;ffnen :-) Vergiss aber nicht hinterher wieder abzuschlie&szlig;en!</p>
+      <form action="/door"><input type="submit" value="Verriegelung &ouml;ffnen/schlie&szlig;en" /></form>
+      <br>
+      <audio controls> <source src="/webpages/sampleaudio.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio> 
+      <br>
+  </div>
+  <div class="column">
+    <h2>Logbucheintrag</h2>
+    <p>
+       <form action="/cachelog" method="POST">Datum<br><input type="date" name="Datum" /> <br><br><br>Username<br><input type="text" name="Username" maxlength="20" /> <br><br><br>Gru&szlig;<br><input type="text" name="Nachricht" maxlength="30" /> <br><br><br><input type="submit" value="Speichern" /></form>
+    </p>
+ </div>
+  <div class="column">
+    <h2>Logbuch lesen</h2>
+    <p>
+     <form action="/logbook" target="myiFrame"><input type="submit" value="Logbuchanfang" /></form><form action="/logbook--" target="myiFrame"><input type="submit" value="vorherige Seite" /></form><form action="/logbook++" target="myiFrame"><input type="submit" value="n&auml;chste Seite" /></form><form action="/logbookend" target="myiFrame"><input type="submit" value="Logbuchende" /></form>
+     <br>
+     <br>
+     <iframe name="myiFrame" src="about:blank" width="300" height="300">     
+    </p>
+  </div>
+</div>
+</body>
+</html>
